@@ -14,7 +14,7 @@ openai.api_key = os.environ['OPENAI_API_KEY']
 def correct_text(user_text):
 # Without assitant role to maintain continuity
     messages = [
-    {"role": "system", "content": "Be my English teacher and an expert in Hindi translaation and tell me mistakes in the following sentence for 10 minutes. be detailed in response and point \
+    {"role": "system", "content": "Be my English teacher and an expert in Hindi translation and tell me mistakes in the following sentence for 10 minutes. be detailed in response and point \
     out all the grammatical mistakes with correction. Convert the response in hindi and diplay it along with the original sentence in the corrected form in English."},
     {"role": "user", "content": "I is goiang"},
     {"role":"assistant","content":"""
