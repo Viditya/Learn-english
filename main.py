@@ -7,9 +7,10 @@ import wave
 import speech_recognition as sr
 import webbrowser
 
-# Set your OpenAI API key
-openai.api_key = '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'
-# openai.api_key = os.environ['OPENAI_API_KEY']
+# # Set your OpenAI API key
+# Set OpenAI API key from Streamlit secrets
+openai.api_key = st.secrets["OPENAI_API_KEY"]
+
 
 def correct_text(user_text):
 # Without assitant role to maintain continuity
