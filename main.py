@@ -9,7 +9,8 @@ import webbrowser
 
 # # Set your OpenAI API key
 # Set OpenAI API key from Streamlit secrets
-print(f"API Key: {os.getenv("OPENAI_API_KEY")}")
+api_key = os.getenv("OPENAI_API_KEY")
+print(api_key)
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
