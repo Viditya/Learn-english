@@ -1,0 +1,30 @@
+name: Run My OpenAI Code
+
+on:
+  push:
+    branches:
+      - main  # You can adjust this to the branch you want to trigger on
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Set OpenAI API Key
+        run: echo "export OPENAI_API_KEY=\$OPENAI_API_KEY" >> $GITHUB_ENV
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+      - name: Run your main.py
+        run: python main.py
